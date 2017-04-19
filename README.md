@@ -8,5 +8,4 @@ You can compile this on lubuntu 16.04 x64 with the following commands:
 sudo apt-get update
 sudo apt-get install git build-essential mingw-w64
 make
-make
 ```
