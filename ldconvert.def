@@ -1,0 +1,5 @@
+LIBRARY "ldconvert"
+EXPORTS
+ld2str
+str2ld
+
