@@ -2,4 +2,6 @@ LIBRARY "ldconvert"
 EXPORTS
 ld2str
 str2ld
+ld2d
+d2ld
 
