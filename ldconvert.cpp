@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -13,8 +14,20 @@ extern "C" __declspec(dllexport) void ld2str(const void* pld, char* str)
     long double ld;
     memset(&ld, 0, sizeof(ld));
     memcpy(&ld, pld, 10);
-    if(snprintf(str, 32, "%.*Lf", LDBL_DIG, ld) > 31)
+    
+    //Workaround for a mingw-w64 bug: https://sourceforge.net/p/mingw-w64/bugs/602
+    switch(__builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL, FP_ZERO, ld))
+    {
+    case FP_INFINITE:
         memcpy(str, "nan", 4);
+        break;
+    case FP_NAN:
+        memcpy(str, "nan", 4);
+        break;
+    default:
+        snprintf(str, 32, "%.*Lf", LDBL_DIG, ld);
+        break;
+    }
 }
 
 //Converts a string to a long double.
