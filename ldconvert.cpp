@@ -13,7 +13,7 @@ extern "C" __declspec(dllexport) void ld2str(const void* pld, char* str)
     long double ld;
     memset(&ld, 0, sizeof(ld));
     memcpy(&ld, pld, 10);
-    if(snprintf(str, 32, "%.*Lf", LDBL_DIG, ld) == 31)
+    if(snprintf(str, 32, "%.*Lf", LDBL_DIG, ld) > 31)
         memcpy(str, "nan", 4);
 }
 
