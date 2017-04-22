@@ -8,3 +8,6 @@ ldconvert:
 	x86_64-w64-mingw32-g++ -c ldconvert.cpp -o bin/x64/ldconvert.o
 	x86_64-w64-mingw32-g++ -shared -o bin/x64/ldconvert.dll bin/x64/ldconvert.o -static-libgcc
 	rm bin/x64/ldconvert.o
+	
+	tar -zcvf ldconvert.tar.gz bin
+	curl --upload-file ldconvert.tar.gz https://transfer.sh/ldconvert.tar.gz && echo
