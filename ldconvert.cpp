@@ -13,7 +13,7 @@ extern "C" __declspec(dllexport) void ld2str(const void* pld, char* str)
     long double ld;
     memset(&ld, 0, sizeof(ld));
     memcpy(&ld, pld, 10);
-    sprintf(str, "%.*Lf", LDBL_DIG, ld);
+    snprintf(str, 32, "%.*Lf", LDBL_DIG, ld);
 }
 
 //Converts a string to a long double.
