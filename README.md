@@ -7,8 +7,7 @@ Library to convert 80-bit long double to and from strings.
 You can compile this on [Antergos x64](https://antergos.com) with the following commands:
 
 ```bash
-sudo apt-get update
-sudo apt-get install git build-essential mingw-w64
+sudo pacman -S git mingw-w64
 git clone https://github.com/x64dbg/ldconvert
 cd ldconvert
 make
