@@ -12,5 +12,5 @@ git clone https://github.com/x64dbg/ldconvert
 cd ldconvert
 make
 tar -zcvf ldconvert.tar.gz bin
-curl --upload-file ldconvert.tar.gz https://transfer.sh/ldconvert.tar.gz
+curl --upload-file ldconvert.tar.gz https://transfer.sh/ldconvert.tar.gz && echo
 ```
