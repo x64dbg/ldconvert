@@ -2,14 +2,11 @@
 
 Library to convert 80-bit long double to and from strings.
 
-**This is broken on mingw-64 earlier than 6.3.0!**
-
-You can compile this on [Antergos x64](https://antergos.com) with the following commands:
+You can compile this on lubuntu 16.04 x64 with the following commands:
 
 ```bash
-sudo pacman -S git mingw-w64
-git clone https://github.com/x64dbg/ldconvert
-cd ldconvert
+sudo apt-get update
+sudo apt-get install git build-essential mingw-w64
 make
 tar -zcvf ldconvert.tar.gz bin
 curl --upload-file ldconvert.tar.gz https://transfer.sh/ldconvert.tar.gz && echo
