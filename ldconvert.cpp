@@ -19,7 +19,7 @@ extern "C" __declspec(dllexport) void ld2str(const void* pld, char* str)
     switch(__builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL, FP_ZERO, ld))
     {
     case FP_INFINITE:
-        memcpy(str, "nan", 4);
+        memcpy(str, "inf", 4);
         break;
     case FP_NAN:
         memcpy(str, "nan", 4);
