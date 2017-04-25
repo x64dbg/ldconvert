@@ -128,7 +128,7 @@ extern "C" __declspec(dllexport) void ld2str(const void* pld, char* str)
     case FltSNaN: strcpy(str, "snan"); break;
     case FltQNaN: strcpy(str, "qnan"); break;
     case FltInvalid: strcpy(str, "invalid"); break;
-    default: snprintf(str, 32, "%.*Lf", LDBL_DIG, ld);
+    default: snprintf(str, 32, "%#.*Lg", LDBL_DIG + 1, ld);
     }
 }
 
