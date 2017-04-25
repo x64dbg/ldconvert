@@ -2,8 +2,6 @@
 
 Library to convert 80-bit long double to and from strings.
 
-**You need a custom mingw-w64 to compile a working version!** The patch is to change the implementation of `__fpclassifyl` with a call to `__builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL, FP_ZERO, _x)` (both in `mingw-w64-headers/crt/math.h` and `mingw-w64-crt/math/fpclassifyl.c`).
-
 You can compile mingw-w64 on lubuntu 16.04 x64 with the following commands:
 
 ```bash
